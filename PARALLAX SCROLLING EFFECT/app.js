@@ -14,6 +14,8 @@ const opacity = document.querySelectorAll(".opacity");
 // make the width of border increase as we scrolling
 const border = document.querySelector(".border");
 
+const rock = document.querySelector(".rock");
+
 
 let header_height = header.offsetHeight;
 // console.log(header_height);
@@ -53,4 +55,7 @@ window.addEventListener("scroll", () => {
     image_container.style.transform = `translateY(${scroll / (section_height + sectionY.top) * -50 + 50})`;
 
     border.style.width = `${scroll / (sectionY.top + section_height) * 30}%`;
+
+    // rock
+    rock.style.opacity = - scroll / (header_height / 0.1) + 1;
 })
